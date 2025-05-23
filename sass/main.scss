@@ -165,3 +165,160 @@ footer {
     }
   }
 }
+
+.bactop {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 100;
+  /* From Uiverse.io by vinodjangid07 */
+  .button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .svgIcon {
+    width: 12px;
+    transition-duration: 0.3s;
+  }
+
+  .svgIcon path {
+    fill: white;
+  }
+
+  .button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgb(181, 160, 255);
+    align-items: center;
+    z-index: 100;
+  }
+
+  .button:hover .svgIcon {
+    /* width: 20px; */
+    transition-duration: 0.3s;
+    transform: translateY(-200%);
+  }
+
+  .button::before {
+    position: absolute;
+    bottom: -20px;
+    content: "Back to Top";
+    color: white;
+    /* transition-duration: .3s; */
+    font-size: 0px;
+  }
+
+  .button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    bottom: unset;
+    /* transform: translateY(-30px); */
+    transition-duration: 0.3s;
+  }
+}
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 100000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-family: cursive;
+  animation-name: load;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  @keyframes load {
+    0% {
+      opacity: 1;
+      z-index: 10000;
+    }
+    80% {
+      opacity: 1;
+      z-index: 10000;
+    }
+    100% {
+      opacity: 0;
+      z-index: -10000;
+    }
+  }
+  .svg-frame {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .svg-frame svg {
+    position: absolute;
+    transition: 0.5s;
+    z-index: calc(1 - (0.2 * var(--j)));
+    transform-origin: center;
+    width: 344px;
+    height: 344px;
+    fill: none;
+  }
+
+  .svg-frame:hover svg {
+    transform: rotate(-80deg) skew(30deg) translateX(calc(45px * var(--i)))
+      translateY(calc(-35px * var(--i)));
+  }
+
+  .svg-frame svg #center {
+    transition: 0.5s;
+    transform-origin: center;
+  }
+
+  .svg-frame:hover svg #center {
+    transform: rotate(-30deg) translateX(45px) translateY(-3px);
+  }
+
+  #out2 {
+    animation: rotate16 7s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+
+  #out3 {
+    animation: rotate16 3s ease-in-out infinite alternate;
+    transform-origin: center;
+    stroke: #ff0;
+  }
+
+  #inner3,
+  #inner1 {
+    animation: rotate16 4s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+
+  #center1 {
+    fill: #ff0;
+    animation: rotate16 2s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+
+  @keyframes rotate16 {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
